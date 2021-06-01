@@ -31,3 +31,7 @@ The REST API service handles three type of HTTP requests: POST, GET and GET with
     Example of GET by id request:
      localhost:8091/rest/3
      where "3" is id of needed state message.
+     
+ ________________________________________________
+ 
+ Main unit tests are represented in test class StateRestControllerTest.

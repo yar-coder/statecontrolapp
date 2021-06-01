@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.sql.SQLException;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -31,8 +29,10 @@ public class StateRestController {
     //Method handles POST-requests
     @PostMapping(value = "")
     public ResponseEntity<?> create(@RequestBody StateMessage stateMessage) {
-            stateService.create(stateMessage);
-            return new ResponseEntity(HttpStatus.ACCEPTED);
+        if (stateService.create(stateMessage)) {
+            return new ResponseEntity(HttpStatus.CREATED);
+        }
+            return new ResponseEntity(HttpStatus.NOT_MODIFIED);
     }
 
     //Method handles GET-requests

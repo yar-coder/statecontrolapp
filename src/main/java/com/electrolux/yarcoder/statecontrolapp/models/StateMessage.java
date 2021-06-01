@@ -41,4 +41,10 @@ public class StateMessage {
     //Appliance serial number
     @Column (name = "serial_number")
     String serialNumber;
+
+    public StateMessage (String state, ApplianceType at, String sn) {
+        this.state = state;
+        this.applianceType = at;
+        this.serialNumber = sn;
+    }
 }

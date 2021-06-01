@@ -11,7 +11,7 @@ import java.util.List;
 
 public interface StateService {
 
-    void create(StateMessage stateMessage);
+    boolean create(StateMessage stateMessage);
 
     StateMessage get(Long id);
 

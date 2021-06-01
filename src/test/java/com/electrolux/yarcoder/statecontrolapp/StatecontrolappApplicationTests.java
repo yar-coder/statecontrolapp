@@ -9,5 +9,4 @@ class StatecontrolappApplicationTests {
     @Test
     void contextLoads() {
     }
-
 }

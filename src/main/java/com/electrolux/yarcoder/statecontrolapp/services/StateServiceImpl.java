@@ -25,8 +25,13 @@ public class StateServiceImpl implements StateService {
 
     //Method creates a new record in DB
     @Override
-    public void create(StateMessage stateMessage) {
-        stateRepository.save(stateMessage);
+    public boolean create(StateMessage stateMessage) {
+        StateMessage savedStateMessage = stateRepository.save(stateMessage);
+        stateMessage.setId(savedStateMessage.getId());
+        if (savedStateMessage != null & stateMessage.equals(savedStateMessage)) {
+            return true;
+        }
+        return false;
     }
 
     //Method gets all records from DB

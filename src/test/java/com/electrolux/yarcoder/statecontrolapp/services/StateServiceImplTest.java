@@ -1,14 +1,12 @@
 package com.electrolux.yarcoder.statecontrolapp.services;
 
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class StateServiceImplTest {
-
-    @Before
-
 
     @Test
     void testCreate() {
